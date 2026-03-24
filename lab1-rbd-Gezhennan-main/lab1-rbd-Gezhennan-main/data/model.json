@@ -1,7 +1,42 @@
 {
-  "description": "请将 __FILL__ 替换为你的 RBD 结构。支持两种节点：'series' 串联、'parallel' 并联(1ooN)。节点可以嵌套。",
-  "model":     "__FILL__",
-  "hints": [
+  "description": "我的 RBD 结构：先串联 C1、C2，再并联 C3、C4，之后串联 C5，最后并联 C6、C7",
+  "model": {
+    "series": [
+      "C1",
+      "C2",
+      {
+        "parallel": ["C3", "C4"]
+      },
+      "C5",
+      {
+        "parallel": ["C6", "C7"]
+      }
+    ]
+  },
+  "hint": [
+    "示例结构（不要照抄，需与你的成功事件一致）：",
+    {
+      "series": [
+        "C1",
+        "C2",
+        {
+          "parallel": [
+            "C3",
+            "C4"
+          ]
+        },
+        "C5",
+        "C7",
+        {
+          "series": [
+            "C8",
+            "C9"
+          ]
+        }
+      ]
+    }
+  ]
+}
     "示例结构（不要照抄，需与你的成功事件一致）：",
     {
       "series": [
